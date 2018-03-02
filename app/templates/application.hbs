@@ -1,5 +1,14 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+{{#bs-navbar as |navbar|}}
+  <div class="navbar-header">
+    {{navbar.toggle}}
+    {{#link-to "home" class="navbar-brand"}}mydailymeal{{/link-to}}
+  </div>
+  {{#navbar.content}}
+    {{#navbar.nav as |nav|}}
+      {{#nav.item}}{{#nav.link-to "home"}}Home{{/nav.link-to}}{{/nav.item}}
+      {{#nav.item}}{{#nav.link-to "home"}}Navbars{{/nav.link-to}}{{/nav.item}}
+    {{/navbar.nav}}
+  {{/navbar.content}}
+{{/bs-navbar}}
 
 {{outlet}}
