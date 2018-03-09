@@ -1,0 +1,6 @@
+{
+  "name": "mydailymeal",
+  "dependencies": {
+    "localforage": "~1.3.1"
+  }
+}
