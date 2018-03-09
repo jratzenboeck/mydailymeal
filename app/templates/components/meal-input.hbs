@@ -1,0 +1,29 @@
+<form>
+  <div class="form-group">
+    <label for="meal-name">Bezeichnung:</label>
+    {{input id="meal-name" type="text"
+            class="form-control" placeholder="Geben Sie den Namen des Gerichts ein"
+            value=meal.name}}
+  </div>
+  <div class="form-group">
+    <label for="meal-type">Type:</label>
+    <select id="meal-type" class="form-control"
+            onchange={{action 'setSelectedMealType' value='target.value'}}>
+      <option disabled selected>Wähle den Type des Gerichts aus</option>
+      {{#each mealTypes as |mealType|}}
+        <option value={{mealType}}>{{mealType}}</option>
+      {{/each}}
+    </select>
+  </div>
+
+  <div class="form-group">
+    <span>Zutaten:</span>
+    <button class="btn btn-secondary" {{action 'addIngredient'}}>Hinzufügen</button>
+  </div>
+
+  {{#each meal.ingredients as |ingredient index|}}
+    {{ingredient-input ingredient=ingredient index=index}}
+  {{/each}}
+
+  <button type="submit" class="btn btn-primary" {{action 'saveMeal'}}>Speichern</button>
+</form>

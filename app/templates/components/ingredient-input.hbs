@@ -1,0 +1,24 @@
+<div class="form-row">
+  <div class="form-group col-sm-6">
+    <label for={{concat 'ingredient-name-' index}}>Name der Zutat:</label>
+    {{input id=(concat 'ingredient-name-' index) type="text"
+            class="form-control" placeholder="Geben Sie den Namen der Zutat ein"
+            value=ingredient.name}}
+  </div>
+  <div class="form-group col-sm-3">
+    <label for={{concat 'ingredient-quantity-' index}}>Menge:</label>
+    {{input id=(concat 'ingredient-quantity' index) type="number"
+            class="form-control" placeholder="Geben Sie die Menge ein"
+            value=ingredient.quantity}}
+  </div>
+  <div class="form-group col-sm-3">
+    <label for={{concat 'ingredient-unit-' index}}>Einheit:</label>
+    <select id={{concat 'ingredient-unit-' index}} class="form-control"
+            onchange={{action 'setSelectedIngredientUnit' value='target.value'}}>
+      <option disabled selected>Wählen Sie eine Einheit aus</option>
+      {{#each ingredientUnits as |unit|}}
+        <option value={{unit}}>{{unit}}</option>
+      {{/each}}
+    </select>
+  </div>
+</div>

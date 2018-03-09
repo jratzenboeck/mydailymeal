@@ -8,7 +8,6 @@ export default Controller.extend({
     linkToRandomMeal() {
       let meals = this.get('model');
       let randomMeal = this.get('mealService').getRandomMeal(meals);
-      console.log(randomMeal.id);
       this.transitionToRoute('meal', randomMeal.id);
     }
   }

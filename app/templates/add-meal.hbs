@@ -1,0 +1,7 @@
+<div class="container-fluid">
+  <h2>Neues Gericht hinzufügen</h2>
+
+  {{meal-input meal=model
+               onAdd=(action "addIngredientToMeal")
+               onSave=(action "saveMeal")}}
+</div>
