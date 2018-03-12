@@ -1,4 +1,2 @@
 //app/adapters/application.js
-import LFAdapter from 'ember-localforage-adapter/adapters/localforage';
-
-export default LFAdapter;
+export { default } from 'ember-local-storage/adapters/local';
