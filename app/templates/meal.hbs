@@ -1,1 +1,30 @@
+<main class="main-container">
+  <h1>Dein heutiges Essen</h1>
+  <h2>{{model.name}}</h2>
+
+  <div class="container meal-details">
+    <div class="row">
+      <div class="col-sm-4">
+        <strong>Zutaten</strong>
+        <ul>
+          {{#each model.ingredients as |ingredient|}}
+            <li>{{ingredient.quantity}}{{ingredient.unit}} {{ingredient.name}}</li>
+          {{/each}}
+        </ul>
+      </div>
+      <div class="col-sm-8">
+        <strong>Rezept</strong>
+        <p>
+          {{model.recipe}}
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 text-center">
+        <button class="btn btn-secondary">Anderes Gericht vorschlagen</button>
+      </div>
+    </div>
+  </div>
+</main>
+
 {{outlet}}
