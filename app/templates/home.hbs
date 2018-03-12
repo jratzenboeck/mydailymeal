@@ -3,13 +3,8 @@
   <h2 class="text-center">Weniger über Essen nachdenken - mehr genießen!</h2>
   <p>Was möchtest du heute essen?</p>
 
-  {{#action-button clicked=(action "linkToRandomMeal")}}
-    Überrasch mich
-  {{/action-button}}
-
-  {{#action-button}}
-    Filtern
-  {{/action-button}}
+  <button class="btn btn-primary action-button" {{action "linkToRandomMeal"}}>Überrasch mich</button>
+  <button class="btn btn-secondary action-button" {{action "linkToRandomMeal"}}>Filtern</button>
 </main>
 
 {{outlet}}

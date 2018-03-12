@@ -4,5 +4,5 @@ export default DS.Model.extend({
   name: DS.attr('string'),
   quantity: DS.attr('number'),
   unit: DS.attr('string'),
-  meal: DS.belongsTo('meal')
+  meal: DS.belongsTo('meal', {autoSave: true })
 });

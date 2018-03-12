@@ -1,5 +1,4 @@
 import Component from '@ember/component';
-import ingredient from "../models/ingredient";
 
 export default Component.extend({
   ingredientUnits: null,
